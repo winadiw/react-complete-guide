@@ -6,9 +6,9 @@ import Cockpit from '../components/Cockpit/Cockpit';
 class App extends Component {
   state = {
     persons: [
-      {id: '1', name: 'Max', age: 28 },
-      {id: '2', name: 'Manu', age: 29 },
-      {id: '3', name: 'Stephanie', age: 26 }
+      { id: '1', name: 'Max', age: 28 },
+      { id: '2', name: 'Manu', age: 29 },
+      { id: '3', name: 'Stephanie', age: 26 }
     ],
     otherState: 'some other value',
     showPersons: false
@@ -28,7 +28,7 @@ class App extends Component {
     const persons = [...this.state.persons]; //get copy from state persons
     persons[personIndex] = person; //set the index of that array to new person
 
-    this.setState( {
+    this.setState({
       persons: persons
     }); //setState on new persons
   }
@@ -49,25 +49,26 @@ class App extends Component {
     });
   }
 
-  render () {
+  render() {
     let persons = null;
 
-    if(this.state.showPersons) {
-      persons = <Persons 
-            persons={this.state.persons}
-            clicked={this.deletePersonHandler}
-            changed={this.nameChangedHandler}/>;
+    if (this.state.showPersons) {
+      persons = <Persons
+        persons={this.state.persons}
+        clicked={this.deletePersonHandler}
+        changed={this.nameChangedHandler} />;
     }
 
     return (
-        <div className={classes.App}>
-          <Cockpit 
-            showPersons={this.state.showPersons}
-            persons={this.state.persons}
-            clicked={this.togglePersonsHandler}
-          />
-          {persons}
-        </div>
+      <div className={classes.App}>
+        <Cockpit
+          appTitle={this.props.title}
+          showPersons={this.state.showPersons}
+          persons={this.state.persons}
+          clicked={this.togglePersonsHandler}
+        />
+        {persons}
+      </div>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
