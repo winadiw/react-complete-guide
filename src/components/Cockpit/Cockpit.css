@@ -6,7 +6,7 @@
     font-weight: bold;
 }
 
-.Cockpit button {
+.Button {
     border: 1px solid blue;
     padding: 16px;
     background-color: green;
@@ -15,18 +15,18 @@
     cursor: pointer;
 }
 
-.Cockpit button:hover {
+.Button:hover {
     background-color: lightgreen;
     color: black;
 }
 
-.Cockpit button.Red {
+.Button.Red {
     background-color: red;
 }
 
 /* will apply if it is a button and have className of Red inside App className */
 
-.Cockpit button.Red:hover {
+.Button.Red:hover {
     background-color: salmon;
     color: black;
 }
